@@ -1,0 +1,33 @@
+<!-- Question 2: Write a JavaScript program to print the current window contents. -->
+<!-- current window content, means whatever is visible on your current screen(similar like taking a screen shot). -->
+
+<!-- Answer 2: -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Page Example</title>
+    <style>
+        @media print {
+            body {
+                font-family: Arial, sans-serif;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        function printPage() {
+            window.print();
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Print Page Example</h1>
+    <p>This is some sample content that will be printed.</p>
+    <button class="no-print" onclick="printPage()">Print this page</button>
+</body>
+</html>
