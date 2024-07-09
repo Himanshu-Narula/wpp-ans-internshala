@@ -1,5 +1,5 @@
-// Question 15: Write a JavaScript program to swap the first and last elements of a given array of integers. The array length should be at least 1.
-// Answer 15:
+// Question 16: Write a JavaScript program to swap the first and last elements of a given array of integers. The array length should be at least 1.
+// Answer 16:
 
 function swap(arr) {
     if (arr.length >= 1) {
