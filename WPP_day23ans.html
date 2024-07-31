@@ -1,0 +1,38 @@
+<!-- Question 23: Write a JavaScript function that changes the background color of an element when a mouse enters it. -->
+<!-- Answer 23: -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Color Change Using JavaScript</title>
+    <style>
+        .myElement{
+            background-color: blue;
+            height: 500px;
+            width: 500px;
+            font-size: xx-large;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            align-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="myElement">Hover to change color!</div>
+    <script>
+        document.querySelector('.myElement').addEventListener('mouseenter', function() {
+            this.style.color = "black";
+            this.style.backgroundColor = '#87CEEB';
+        });
+
+        // Resetting the background color on mouse leave (optional)
+        document.querySelector('.myElement').addEventListener('mouseleave', function() {
+            this.style.color = "white";
+            this.style.backgroundColor = 'blue';
+        });
+    </script>
+</body>
+</html>
