@@ -1,0 +1,72 @@
+<!-- Question 25: Write a JavaScript program to implement drag-and-drop functionality to allow users to reorder items in a list. -->
+<!-- Answer 25: -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Click Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #clickableElement, #colorChangeElement {
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #clickableElement {
+            background-color: #87ceeb;
+        }
+
+        #colorChangeElement {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="clickableElement">Double-click me!</div>
+    <div id="colorChangeElement">My background color will change</div>
+
+    <script>
+        // Function to add a double-click event listener to an element
+        function addDoubleClickListener(element, action) {
+            // Check if the provided element exists
+            if (element) {
+                // Add the double-click event listener
+                element.addEventListener('dblclick', action);
+            } else {
+                console.error('Element not found');
+            }
+        }
+
+        // Function to change the background color of another element
+        function changeBackgroundColor() {
+            const colorChangeElement = document.getElementById('colorChangeElement');
+            if (colorChangeElement) {
+                colorChangeElement.style.backgroundColor = 'yellow';
+            } else {
+                console.error('Element to change background color not found');
+            }
+        }
+
+        // Adding double-click listener to the element with id 'clickableElement'
+        document.addEventListener('DOMContentLoaded', () => {
+            const clickableElement = document.getElementById('clickableElement');
+            addDoubleClickListener(clickableElement, changeBackgroundColor);
+        });
+    </script>
+</body>
+</html>
