@@ -1,0 +1,42 @@
+<!-- Question 26: Write a JavaScript program to copy a string to the clipboard. -->
+<!-- Answer 26: -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Hello</h1>
+
+    <script>
+        function copyToClipboard(text) {
+        // Create a temporary textarea element
+        const tempTextarea = document.createElement('textarea');
+        
+        // Set the text content to the value you want to copy
+        tempTextarea.value = text;
+        
+        // Append the textarea to the document body (required for the copy command to work)
+        document.body.appendChild(tempTextarea);
+        
+        // Select the text in the textarea
+        tempTextarea.select();
+        
+        // Execute the copy command
+        document.execCommand('copy');
+        
+        // Remove the textarea from the document
+        document.body.removeChild(tempTextarea);
+        
+        console.log('Text copied to clipboard:', text);
+        }
+
+        // Example usage:
+        copyToClipboard('Hello, world!');
+    </script>
+</body>
+</html>
